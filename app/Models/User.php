@@ -18,4 +18,9 @@ class User extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function commentsThroughPost()
+    {
+        return $this->hasManyThrough(Comment::class, Post::class);
+    }
 }

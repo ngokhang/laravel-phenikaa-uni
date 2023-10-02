@@ -38,8 +38,8 @@ class UserController extends Controller
     public function show(string $id)
     {
         //
-        $user = User::with('posts')->get();
-        return $user;
+        $user = User::find($id);
+        return $user->commentsThroughPost;
     }
 
     /**
